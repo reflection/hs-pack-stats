@@ -60,9 +60,22 @@ def update_hs_stats(card_id):
                 stats[k][v] = 0
             stats[k][v] += 1
 
+# Sort everything alphabetically
+# except for Class - Neutral (sort to the end)
+def custom_sort(a, b):
+    if a == 'Neutral':
+        a = 'ZZZ'
+    if b == 'Neutral':
+        b = 'ZZZ'
+    if a > b:
+        return 1
+    return -1
 def format_stats(stats, fs, total, level=0):
     length = 14
-    for k in stats:
+    keys = stats.keys()
+    if level > 0:
+        keys.sort(cmp=custom_sort)
+    for k in keys:
         if k == 'playerClass':
             name = 'Class'
         else:
