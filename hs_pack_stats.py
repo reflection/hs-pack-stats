@@ -5,13 +5,9 @@ import re
 import sys
 import time
 
-""" Continuously write statistics of packs opened from Hearthstone logs to file
-    See reddit thread to enable logging
-    https://www.reddit.com/r/hearthstone/comments/3i2que/how_to_track_your_pack_openings_for_tomorrows_tgt/
+""" Hearthstone Pack Statistics Tracker """
 
-    AllSets.json downloaded from http://hearthstonejson.com
-    IMPORTANT: Only tested on a Mac """
-
+# Mac Paths
 stats_file = os.path.expanduser('~/Documents/hs_pack_stats.txt')
 hs_log_dir = os.path.expanduser('~/Library/Preferences/Blizzard/Hearthstone/Logs')
 
